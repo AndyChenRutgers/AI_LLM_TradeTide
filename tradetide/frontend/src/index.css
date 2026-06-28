@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Light mode defaults */
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  /* Dark mode — applied when <html> has class="dark" */
+  .dark body {
+    @apply bg-slate-950 text-slate-100;
+  }
+
+  ::-webkit-scrollbar        { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track  { background: transparent; }
+  ::-webkit-scrollbar-thumb  { border-radius: 9999px; }
+
+  body       ::-webkit-scrollbar-thumb { background: #cbd5e1; }   /* slate-300 */
+  .dark body ::-webkit-scrollbar-thumb { background: #334155; }   /* slate-700 */
+}
